@@ -1,25 +1,29 @@
+--creating a database to use:
 CREATE DATABASE walmart;
 USE walmart;
 
+--creating a table to import data:
 CREATE TABLE walmart_data(
-   Invoice_ID         INT(10)  NOT NULL PRIMARY KEY 
-  ,Branch                    VARCHAR(1) NOT NULL
-  ,City                      VARCHAR(9) NOT NULL
-  ,Customer_type           VARCHAR(6) NOT NULL
-  ,Gender                    VARCHAR(6) NOT NULL
-  ,Product_line            VARCHAR(22) NOT NULL
-  ,Unit_price              NUMERIC(5,2) NOT NULL
-  ,Quantity                  INTEGER  NOT NULL
-  ,Tax                   NUMERIC(7,4) NOT NULL
-  ,Total                     NUMERIC(8,4) NOT NULL
-  ,Date                      DATE  NOT NULL
-  ,Time                      VARCHAR(8) NOT NULL
-  ,Payment                   VARCHAR(11) NOT NULL
-  ,cogs                      NUMERIC(6,2) NOT NULL
-  ,gross_margin_percentage NUMERIC(11,9) NOT NULL
-  ,gross_income            NUMERIC(7,4) NOT NULL
-  ,Rating                    NUMERIC(3,1) NOT NULL
+  Invoice_ID         INT(10)  NOT NULL PRIMARY KEY ,
+  Branch                    VARCHAR(1) NOT NULL,
+  City                      VARCHAR(9) NOT NULL,
+  Customer_type           VARCHAR(6) NOT NULL,
+  Gender                    VARCHAR(6) NOT NULL,
+  Product_line            VARCHAR(22) NOT NULL,
+  Unit_price              NUMERIC(5,2) NOT NULL,
+  Quantity                  INTEGER  NOT NULL,
+  Tax                   NUMERIC(7,4) NOT NULL,
+  Total                     NUMERIC(8,4) NOT NULL,
+  Date                      DATE  NOT NULL,
+  Time                      VARCHAR(8) NOT NULL,
+  Payment                   VARCHAR(11) NOT NULL,
+  cogs                      NUMERIC(6,2) NOT NULL,
+  gross_margin_percentage NUMERIC(11,9) NOT NULL,
+  gross_income            NUMERIC(7,4) NOT NULL,
+  Rating                    NUMERIC(3,1) NOT NULL
 );
+
+--Importing data from a csv file from kaggle:
 
 /* The below query wasn't working because VS CODE isn't given the permissions
 it wasn't even working in MySQL workbench due to [ERROR 3948 (42000), ERROR 2068 (HY000)] and and on the hunt for the reasons 
@@ -37,6 +41,8 @@ go to the 'Advanced' sub-tab, and in the 'Others:' box add the line 'OPT_LOCAL_I
 
 */
 
+--Ran the first test query to look at all my data
+
 SELECT *
 FROM walmart_data;
 
@@ -47,6 +53,7 @@ LIMIT 10;
 
 SELECT *
 FROM walmart_data
-WHERE (Branch = "A") & (Quantity < 5) & (Unit_price > 60);
+WHERE (Branch = "A") & (Quantity < 5) & (Unit_price > 60)
+LIMIT 5;
 
 

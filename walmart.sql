@@ -77,3 +77,16 @@ SET time_of_day = (
 SELECT *
 FROM walmart_data
 LIMIT 5;
+
+ALTER TABLE walmart_data
+ADD COLUMN day_name VARCHAR(10);
+
+UPDATE walmart_data
+SET day_name = DAYNAME(date);
+
+-- month name
+
+SELECT *
+FROM walmart_data
+LIMIT 18446744073709551615 
+OFFSET 1;

@@ -90,3 +90,14 @@ SELECT *
 FROM walmart_data
 LIMIT 18446744073709551615 
 OFFSET 1;
+
+
+ALTER TABLE walmart_data
+ADD COLUMN month_name VARCHAR(15);
+
+UPDATE walmart_data
+SET month_name = MONTHNAME(date);
+
+SELECT * 
+FROM walmart_data
+LIMIT 5;

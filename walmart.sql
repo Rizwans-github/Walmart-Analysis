@@ -109,3 +109,12 @@ FROM walmart_data;
 -- In which city is each branch
 SELECT DISTINCT City, Branch
 FROM walmart_data;
+
+
+SELECT COUNT(DISTINCT Product_line)
+FROM walmart_data;
+
+SELECT COUNT (Payment) AS Most_used
+FROM walmart_data
+GROUP BY payment
+ORDER BY Most_used DESC;

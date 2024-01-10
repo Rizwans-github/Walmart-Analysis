@@ -101,3 +101,11 @@ SET month_name = MONTHNAME(date);
 SELECT * 
 FROM walmart_data
 LIMIT 5;
+
+-- How many unique cities does the data have
+SELECT DISTINCT City
+FROM walmart_data;
+
+-- In which city is each branch
+SELECT DISTINCT City, Branch
+FROM walmart_data;

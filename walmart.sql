@@ -134,17 +134,17 @@ FROM walmart_data
 GROUP BY month_name
 ORDER BY COG DESC;
 
-SELECT Product_line, SUM(Total) AS Revenue
+SELECT Product_line, ROUND(SUM(Total), 2) AS Revenue
 FROM walmart_data
 GROUP BY Product_line
 ORDER BY Revenue DESC;
 
-SELECT City, SUM(Total) AS Revenue
+SELECT City, ROUND(SUM(Total), 2) AS Revenue
 FROM walmart_data
 GROUP BY City
 ORDER BY Revenue DESC;
 
-SELECT Product_line, AVG(Tax) AS VAT
+SELECT Product_line, ROUND(AVG(Tax), 2) AS VAT
 FROM walmart_data
 GROUP BY Product_line
 ORDER BY VAT DESC;
@@ -158,3 +158,8 @@ SELECT Gender, Product_line, COUNT(Gender) AS CNT
 FROM walmart_data
 GROUP BY Product_line, Gender
 ORDER BY CNT DESC;
+
+SELECT Product_line, ROUND(AVG(Rating),  2)
+FROM walmart_data
+GROUP BY Product_line
+ORDER BY AVG(Rating) DESC;

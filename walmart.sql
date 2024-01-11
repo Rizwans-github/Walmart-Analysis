@@ -114,7 +114,22 @@ FROM walmart_data;
 SELECT COUNT(DISTINCT Product_line)
 FROM walmart_data;
 
-SELECT COUNT (Payment) AS Most_used
+SELECT payment, COUNT (Payment) AS Most_used
 FROM walmart_data
 GROUP BY payment
 ORDER BY Most_used DESC;
+
+SELECT Product_line, COUNT(Product_line) AS CNT
+FROM walmart_data
+GROUP BY Product_line
+ORDER BY CNT DESC;  
+
+SELECT month_name, SUM(Total) AS Revenue
+FROM walmart_data
+GROUP BY month_name
+ORDER BY Revenue DESC;
+
+SELECT month_name, SUM(cogs) AS COG
+FROM walmart_data
+GROUP BY month_name
+ORDER BY COG DESC;

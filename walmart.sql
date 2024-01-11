@@ -133,3 +133,23 @@ SELECT month_name, SUM(cogs) AS COG
 FROM walmart_data
 GROUP BY month_name
 ORDER BY COG DESC;
+
+SELECT Product_line, SUM(Total) AS Revenue
+FROM walmart_data
+GROUP BY Product_line
+ORDER BY Revenue DESC;
+
+SELECT City, SUM(Total) AS Revenue
+FROM walmart_data
+GROUP BY City
+ORDER BY Revenue DESC;
+
+SELECT Product_line, AVG(Tax) AS VAT
+FROM walmart_data
+GROUP BY Product_line
+ORDER BY VAT DESC;
+
+SELECT Branch, SUM(Quantity) As QTY
+FROM walmart_data
+GROUP BY Branch
+HAVING SUM(Quantity) > (SELECT AVG(Quantity) FROM walmart_data);

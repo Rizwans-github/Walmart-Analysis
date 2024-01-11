@@ -153,3 +153,8 @@ SELECT Branch, SUM(Quantity) As QTY
 FROM walmart_data
 GROUP BY Branch
 HAVING SUM(Quantity) > (SELECT AVG(Quantity) FROM walmart_data);
+
+SELECT Gender, Product_line, COUNT(Gender) AS CNT
+FROM walmart_data
+GROUP BY Product_line, Gender
+ORDER BY CNT DESC;

@@ -1,6 +1,4 @@
--- Creating a database named "walmart"
 CREATE DATABASE walmart;
--- Switching to the "walmart" database
 USE walmart;
 
 -- Creating a table to store Walmart transaction data

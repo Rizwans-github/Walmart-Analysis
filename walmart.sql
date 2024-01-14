@@ -1,6 +1,6 @@
--- Creating a database named "walmart"
+
 CREATE DATABASE walmart;
--- Switching to the "walmart" database
+
 USE walmart;
 
 -- Creating a table to store Walmart transaction data
@@ -144,3 +144,9 @@ SELECT Product_line, ROUND(SUM(Total), 2) AS Total_Revenue, ROUND(AVG(gross_marg
 FROM walmart_data
 GROUP BY Product_line
 ORDER BY Total_Revenue DESC;
+
+-- Analyzing the distribution of quantities sold per branch and customer type
+SELECT Branch, Customer_type, COUNT(*) AS Transaction_Count, MIN(Quantity) AS Min_Quantity, MAX(Quantity) AS Max_Quantity, ROUND(AVG(Quantity), 2) AS Avg_Quantity
+FROM walmart_data
+GROUP BY Branch, Customer_type
+ORDER BY Transaction_Count DESC;

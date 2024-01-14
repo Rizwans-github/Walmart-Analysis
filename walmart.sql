@@ -1,7 +1,7 @@
 CREATE DATABASE walmart;
 USE walmart;
 
--- Creating a table to store Walmart transaction data
+
 CREATE TABLE walmart_data(
   Invoice_ID         INT(10)  NOT NULL PRIMARY KEY ,
   Branch                    VARCHAR(1) NOT NULL,

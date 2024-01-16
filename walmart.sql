@@ -148,3 +148,9 @@ SELECT Branch, Customer_type, COUNT(*) AS Transaction_Count, MIN(Quantity) AS Mi
 FROM walmart_data
 GROUP BY Branch, Customer_type
 ORDER BY Transaction_Count DESC;
+
+SELECT time_of_day, COUNT(*) AS Total_Sales
+FROM walmart_data
+WHERE day_name = 
+GROUP BY time_of_day
+ORDER BY Total_Sales Desc;

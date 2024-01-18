@@ -24,12 +24,16 @@ CREATE TABLE walmart_data(
 
 -- Importing data from a CSV file into the "walmart_data" table
 -- (Note: Set global local_infile=1; and OPT_LOCAL_INFILE=1 in MySQL Workbench connection settings)
-LOAD DATA LOCAL INFILE "C:/Users/Mohd Rizwan/Downloads/Walmartwalmart_dataData.csv"
+SET GLOBAL local_infile=1;
+
+LOAD DATA LOCAL INFILE "C:/Users/Mohd Rizwan/Downloads/WalmartSalesData.csv"
 INTO TABLE walmart_data
 FIELDS TERMINATED BY ','
-LINES TERMINATED BY '\n';
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
 
 -- Viewing the first 5 rows of the "walmart_data" table
+
 SELECT *
 FROM walmart_data
 LIMIT 5;
@@ -154,3 +158,9 @@ FROM walmart_data
 WHERE day_name = 
 GROUP BY time_of_day
 ORDER BY Total_Sales Desc;
+
+SELECT Customer_type, ROUND(SUM(Total), 2) AS Total_Rev 
+FROM walmart_data
+GROUP BY Customer_type
+ORDER BY Total_Rev DESC;
+

@@ -1,1 +1,4 @@
-*.tsql linguist-detectable=true
+*.mysql linguist-detectable=true
+*.java linguist-detectable=false
+*.python linguist-detectable=false
+*.css linguist-detectable=false

@@ -22,9 +22,6 @@ CREATE TABLE walmart_data(
   Rating                    NUMERIC(3,1) NOT NULL
 );
 
-DROP TABLE walmart_data;
-
-SET GLOBAL local_infile=1;
 
 LOAD DATA LOCAL INFILE "C:/Users/Mohd Rizwan/Downloads/WalmartSalesData.csv"
 INTO TABLE walmart_data

@@ -22,6 +22,7 @@ CREATE TABLE walmart_data(
   Rating                    NUMERIC(3,1) NOT NULL
 );
 
+drop table walmart_data;
 -- Importing data from a CSV file into the "walmart_data" table
 -- (Note: Set global local_infile=1; and OPT_LOCAL_INFILE=1 in MySQL Workbench connection settings)
 SET GLOBAL local_infile=1;
@@ -164,3 +165,8 @@ FROM walmart_data
 GROUP BY Customer_type
 ORDER BY Total_Rev DESC;
 
+/*
+Today I got so many errors my sql not showing up in the CLI(command prompt)
+so had to go into enviroment variables of my pc to set it up coding is fun :)
+PS: am not crying
+*/

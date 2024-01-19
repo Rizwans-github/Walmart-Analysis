@@ -38,6 +38,14 @@ First run SET GLOBAL local_infile=1; query and Edit the connection, on the Conne
 go to the 'Advanced' sub-tab, and in the 'Others:' box add the line 'OPT_LOCAL_INFILE=1'.
 */
 
+
+-- Loading sales data from a CSV file into the 'walmart_data' table.
+LOAD DATA LOCAL INFILE "C:/Users/Mohd Rizwan/Downloads/WalmartSalesData.csv"
+INTO TABLE walmart_data
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
 --Ran the first test query to look at all my data
 SELECT *
 FROM walmart_data
@@ -52,12 +60,6 @@ FROM walmart_data
 WHERE (Branch = "A") & (Quantity < 5) & (Unit_price > 60)
 LIMIT 5;
 
--- Loading sales data from a CSV file into the 'walmart_data' table.
-LOAD DATA LOCAL INFILE "C:/Users/Mohd Rizwan/Downloads/WalmartSalesData.csv"
-INTO TABLE walmart_data
-FIELDS TERMINATED BY ','
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS;
 
 -- Updating the 'walmart_data' table with a new column 'time_of_day' based on time ranges.
 UPDATE walmart_data
@@ -80,7 +82,9 @@ ALTER TABLE walmart_data
 ADD COLUMN month_name VARCHAR(15);
 
 UPDATE walmart_data
-SET month_name = MONTHNAME(date);-- Selecting distinct cities from the 'walmart_data' table.
+SET month_name = MONTHNAME(date);
+
+-- Selecting distinct cities from the 'walmart_data' table.
 SELECT DISTINCT City
 FROM walmart_data;
 

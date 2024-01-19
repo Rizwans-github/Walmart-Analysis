@@ -165,4 +165,5 @@ FROM walmart_data;
 
 SELECT Customer_type,COUNT(*) AS CUST
 FROM walmart_data
-GROUP BY Customer_type;
+GROUP BY Customer_type
+ORDER BY CUST DESC;

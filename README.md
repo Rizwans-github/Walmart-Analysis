@@ -26,9 +26,9 @@ CREATE TABLE walmart_data(
   Rating                    NUMERIC(3,1) NOT NULL 
 );
 
-/* The below query wasn't working because VS CODE isn't given the permissions
+/* The below query wasn't working because VS CODE didn't have the permission
 it wasn't even working in MySQL workbench due to [ERROR 3948 (42000), ERROR 2068 (HY000)]
-and and on the hunt for the reasons I was able to resolve it with the help of StackOverflow
+and on the hunt for the reasons I was able to resolve it with the help of StackOverflow
 (https://stackoverflow.com/questions/59993844/error-loading-local-data-is-disabled-this-must-be-enabled-on-both-the-client,
 https://stackoverflow.com/questions/63361962/error-2068-hy000-load-data-local-infile-file-request-rejected-due-to-restrict)
 LOAD DATA LOCAL INFILE "C:/Users/Mohd Rizwan/Downloads/Walmartwalmart_dataData.csv"

@@ -167,3 +167,39 @@ SELECT Customer_type,COUNT(*) AS CUST
 FROM walmart_data
 GROUP BY Customer_type
 ORDER BY CUST DESC;
+
+SELECT Gender,COUNT(*) AS CUST
+FROM walmart_data
+GROUP BY Gender
+ORDER BY CUST DESC;
+
+SELECT Branch, Gender, COUNT(*) AS CNT
+FROM walmart_data
+GROUP BY Branch, Gender
+ORDER BY Branch, CNT DESC;
+
+SELECT
+  time_of_day, 
+  ROUND(AVG(Rating), 2) AS Rtngs
+FROM walmart_data
+GROUP BY time_of_day;
+
+SELECT
+  day_name, 
+  ROUND(AVG(Rating), 2) AS Rtngs
+FROM walmart_data
+GROUP BY day_name
+ORDER BY Rtngs DESC;
+
+SELECT
+  Branch,
+  day_name, 
+  ROUND(AVG(Rating), 2) AS Rtngs
+FROM walmart_data
+GROUP BY Branch, day_name
+ORDER BY Branch, Rtngs DESC;
+
+/*
+With this am almost done with this project and this was made possible by Code With Prince, the project was meant to be a guide for me so took a look at the video for the questions that needed to get answered for the analysis and whenever I felt stuck, I referred to the videos links in the read me file will be added.
+*/
+

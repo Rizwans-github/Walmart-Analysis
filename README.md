@@ -27,8 +27,9 @@ CREATE TABLE walmart_data(
 );
 
 /* The below query wasn't working because VS CODE isn't given the permissions
-it wasn't even working in MySQL workbench due to [ERROR 3948 (42000), ERROR 2068 (HY000)] and and on the hunt for the reasons 
-I was able to resolve it with the help of StackOverflow(https://stackoverflow.com/questions/59993844/error-loading-local-data-is-disabled-this-must-be-enabled-on-both-the-client,
+it wasn't even working in MySQL workbench due to [ERROR 3948 (42000), ERROR 2068 (HY000)]
+and and on the hunt for the reasons I was able to resolve it with the help of StackOverflow
+(https://stackoverflow.com/questions/59993844/error-loading-local-data-is-disabled-this-must-be-enabled-on-both-the-client,
 https://stackoverflow.com/questions/63361962/error-2068-hy000-load-data-local-infile-file-request-rejected-due-to-restrict)
 LOAD DATA LOCAL INFILE "C:/Users/Mohd Rizwan/Downloads/Walmartwalmart_dataData.csv"
 INTO TABLE walmart_data
@@ -251,8 +252,9 @@ ORDER BY Branch, Rtngs DESC;
 
 
 /*
-With this am almost done with this project and this was made possible by Code With Prince, the project was meant to be a 
-guide for me so took a look at the video for the questions that needed to be answered for the analysis and whenever 
-I felt stuck, so I referred to the video and links in the read-me file to be added soon.
+With this am almost done with this project and this was made possible by Code With Prince,
+the project was meant to be a guide for me so took a look at the video for the questions
+that needed to be answered for the analysis and whenever I felt stuck,
+so I referred to the video and links in the read-me file to be added soon.
 */
 ```

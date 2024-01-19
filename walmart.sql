@@ -41,6 +41,11 @@ SET time_of_day = (
   END
 );
 
+SELECT *
+FROM walmart_data
+LIMIT 5;
+
+
 ALTER TABLE walmart_data
 ADD COLUMN day_name VARCHAR(10);
 
@@ -141,3 +146,23 @@ so had to go into enviroment variables of my pc to set it up coding is fun :)
 PS: am not crying
 */
 
+SELECT City, ROUND(AVG(Tax), 2) AS Avg_Tax
+FROM walmart_data
+GROUP BY City
+ORDER BY Avg_Tax DESC;
+
+
+SELECT Customer_type, ROUND(AVG(Tax), 2) AS Avg_Tax
+FROM walmart_data
+GROUP BY Customer_type
+ORDER BY Avg_Tax DESC;
+
+SELECT DISTINCT Customer_type
+FROM walmart_data;
+
+SELECT DISTINCT Payment
+FROM walmart_data;
+
+SELECT Customer_type,COUNT(*) AS CUST
+FROM walmart_data
+GROUP BY Customer_type;

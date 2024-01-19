@@ -50,17 +50,28 @@ IGNORE 1 ROWS;
 SELECT *
 FROM walmart_data
 LIMIT 5;
+```
+![image](https://github.com/Rizwans-github/Walmart-Analysis/assets/141806496/ba6d3c58-2a59-49cb-969b-82558222b201)
 
+
+```
 SELECT * 
 FROM walmart_data
 LIMIT 10;
+```
 
+![image](https://github.com/Rizwans-github/Walmart-Analysis/assets/141806496/0d175f59-4362-4d9d-921b-91eb64763b60)
+```
 SELECT *
 FROM walmart_data
 WHERE (Branch = "A") & (Quantity < 5) & (Unit_price > 60)
 LIMIT 5;
 
 
+```
+![image](https://github.com/Rizwans-github/Walmart-Analysis/assets/141806496/6d940aa6-cce1-4476-acc6-b0dbe9930447)
+
+```
 -- Updating the 'walmart_data' table with a new column 'time_of_day' based on time ranges.
 UPDATE walmart_data
 SET time_of_day = (
@@ -90,10 +101,17 @@ FROM walmart_data;
 SELECT DISTINCT City, Branch
 FROM walmart_data;
 
+```
+![image](https://github.com/Rizwans-github/Walmart-Analysis/assets/141806496/fd95258a-253c-46dc-bc7e-58a5180bcef4)
+```
+
 -- Counting the number of distinct product lines in the dataset.
 SELECT COUNT(DISTINCT Product_line)
 FROM walmart_data;
+```
+![image](https://github.com/Rizwans-github/Walmart-Analysis/assets/141806496/c5e19878-2268-42c8-9f9f-d7bbbaa54c40)
 
+```
 -- Analyzing the most used payment methods and their occurrences.
 SELECT payment, COUNT(Payment) AS Most_used
 FROM walmart_data

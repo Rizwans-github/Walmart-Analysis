@@ -237,19 +237,26 @@ SELECT Branch, Customer_type,
 FROM walmart_data
 GROUP BY Branch, Customer_type
 ORDER BY Transaction_Count DESC;
+```
 
+![image](https://github.com/Rizwans-github/Walmart-Analysis/assets/141806496/419a4717-b688-4379-8c8b-9df79709daaa)
+```MySQL
 -- Total sales count for each time of day.
 SELECT time_of_day, COUNT(*) AS Total_Sales
 FROM walmart_data
 GROUP BY time_of_day
 ORDER BY Total_Sales DESC;
-
+```
+![image](https://github.com/Rizwans-github/Walmart-Analysis/assets/141806496/39309f03-ff11-4fec-8d05-4575eb612ea9)
+```MySQL
 -- Total revenue for each customer type.
 SELECT Customer_type, ROUND(SUM(Total), 2) AS Total_Rev 
 FROM walmart_data
 GROUP BY Customer_type
 ORDER BY Total_Rev DESC;
-
+```
+![image](https://github.com/Rizwans-github/Walmart-Analysis/assets/141806496/16db44a1-9f20-4c4b-a237-3b1a88922bf6)
+```MySQL
 /*
 Today I got so many errors MySQL not showing up in the CLI(command prompt)
 so had to go into environment variables of my pc to set it up by adding the bin file
@@ -266,57 +273,100 @@ SELECT City, ROUND(AVG(Tax), 2) AS Avg_Tax
 FROM walmart_data
 GROUP BY City
 ORDER BY Avg_Tax DESC;
+```
 
+![image](https://github.com/Rizwans-github/Walmart-Analysis/assets/141806496/2f33d06d-7d92-4fa8-b65d-79975f2ad805)
+
+
+```MySQL
 -- Average tax for each customer type.
 SELECT Customer_type, ROUND(AVG(Tax), 2) AS Avg_Tax
 FROM walmart_data
 GROUP BY Customer_type
 ORDER BY Avg_Tax DESC;
+```
 
+![image](https://github.com/Rizwans-github/Walmart-Analysis/assets/141806496/9d5218eb-0760-4e59-809a-d22919fe1c36)
+
+
+```MySQL
 -- Distinct customer types.
 SELECT DISTINCT Customer_type
 FROM walmart_data;
+```
 
+![image](https://github.com/Rizwans-github/Walmart-Analysis/assets/141806496/6f000cab-3ed9-4f94-a310-9d2f0b109efe)
+
+
+```MySQL
 -- Distinct payment methods.
 SELECT DISTINCT Payment
 FROM walmart_data;
+```
+![image](https://github.com/Rizwans-github/Walmart-Analysis/assets/141806496/b28cbdc5-1bff-40e5-a69f-60542fe03678)
 
+
+```MySQL
 -- Count of transactions for each customer type.
 SELECT Customer_type, COUNT(*) AS CUST
 FROM walmart_data
 GROUP BY Customer_type
 ORDER BY CUST DESC;
+```
 
+![image](https://github.com/Rizwans-github/Walmart-Analysis/assets/141806496/e6c2a5f1-5294-4e40-a37d-de6af6b83d57)
+
+```MySQL
 -- Count of transactions for each gender.
 SELECT Gender, COUNT(*) AS CUST
 FROM walmart_data
 GROUP BY Gender
 ORDER BY CUST DESC;
+```
+![image](https://github.com/Rizwans-github/Walmart-Analysis/assets/141806496/6ed23026-f752-437d-940c-34dbccaa20c6)
 
+
+```MySQL
 -- Count of transactions by branch and gender.
 SELECT Branch, Gender, COUNT(*) AS CNT
 FROM walmart_data
 GROUP BY Branch, Gender
 ORDER BY Branch, CNT DESC;
+```
 
+![image](https://github.com/Rizwans-github/Walmart-Analysis/assets/141806496/93ea5557-a68f-4263-9d90-93f7530a101e)
+
+
+```MySQL
 -- Average ratings for each time of day.
 SELECT time_of_day, ROUND(AVG(Rating), 2) AS Rtngs
 FROM walmart_data
 GROUP BY time_of_day;
+```
 
+![image](https://github.com/Rizwans-github/Walmart-Analysis/assets/141806496/5378f45d-d0d4-445b-8fd2-9a4f84330872)
+
+```MySQL
 -- Average ratings for each day of the week.
 SELECT day_name, ROUND(AVG(Rating), 2) AS Rtngs
 FROM walmart_data
 GROUP BY day_name
 ORDER BY Rtngs DESC;
+```
+![image](https://github.com/Rizwans-github/Walmart-Analysis/assets/141806496/474ccd44-b408-4553-ab84-f00d83f2e751)
 
+
+```MySQL
 -- Average ratings by branch and day of the week.
 SELECT Branch, day_name, ROUND(AVG(Rating), 2) AS Rtngs
 FROM walmart_data
 GROUP BY Branch, day_name
 ORDER BY Branch, Rtngs DESC;
+```
+![image](https://github.com/Rizwans-github/Walmart-Analysis/assets/141806496/dea20451-430a-48cc-a288-84ed5f5d82f9)
 
 
+```MySQL
 /*
 With this am almost done with this project and this was made possible by Code With Prince,
 the project was meant to be a guide for me so took a look at the video for the questions

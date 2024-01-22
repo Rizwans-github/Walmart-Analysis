@@ -134,7 +134,7 @@ FROM walmart_data
 GROUP BY Product_line
 ORDER BY CNT DESC;
 ```
-![image](https://github.com/Rizwans-github/Walmart-Analysis/assets/141806496/c367c41e-4509-4835-85ee-bc78763d781d)
+![image](https://github.com/Rizwans-github/Walmart-Analysis/assets/141806496/e5c55a08-40e5-4ef3-9dcd-b867363a56cf)
 
 
 ```MySQL
@@ -144,7 +144,7 @@ FROM walmart_data
 GROUP BY month_name
 ORDER BY Revenue DESC;
 ```
-![image](https://github.com/Rizwans-github/Walmart-Analysis/assets/141806496/5d5922d9-cb57-4d0f-a385-cbd38d67c933)
+![image](https://github.com/Rizwans-github/Walmart-Analysis/assets/141806496/7e7696de-f2e3-4aa4-8a92-ed4f86ca05a5)
 
 
 
@@ -155,16 +155,16 @@ FROM walmart_data
 GROUP BY month_name
 ORDER BY COG DESC;
 ```
-
-![image](https://github.com/Rizwans-github/Walmart-Analysis/assets/141806496/74cf84ad-6ed0-4df7-b1ef-7b347c70fb16)
+![image](https://github.com/Rizwans-github/Walmart-Analysis/assets/141806496/039562bf-2e56-4699-8b24-efe98212049b)
 ```MySQL
 -- Revenue for each product line.
 SELECT Product_line, ROUND(SUM(Total), 2) AS Revenue
 FROM walmart_data
 GROUP BY Product_line
 ORDER BY Revenue DESC;
+
 ```
-![image](https://github.com/Rizwans-github/Walmart-Analysis/assets/141806496/96871071-3704-4f7a-af27-764f51d94844)
+![image](https://github.com/Rizwans-github/Walmart-Analysis/assets/141806496/df01269c-a021-4d2e-9db1-8b2cd19fd165)
 
 ```MySQL
 -- Revenue for each city.
@@ -173,7 +173,8 @@ FROM walmart_data
 GROUP BY City
 ORDER BY Revenue DESC;
 ```
-![image](https://github.com/Rizwans-github/Walmart-Analysis/assets/141806496/228657db-af77-4ced-86d1-aeef65617833)
+![image](https://github.com/Rizwans-github/Walmart-Analysis/assets/141806496/3b93d522-93ea-4f65-b1c3-001a3566205f)
+
 ```MySQL
 -- Average Tax (VAT) for each product line.
 SELECT Product_line, ROUND(AVG(Tax), 2) AS VAT
@@ -181,7 +182,10 @@ FROM walmart_data
 GROUP BY Product_line
 ORDER BY VAT DESC;
 ```
-![image](https://github.com/Rizwans-github/Walmart-Analysis/assets/141806496/93cdf5fd-72aa-4feb-bcbe-d6145c3d0f30)
+
+![image](https://github.com/Rizwans-github/Walmart-Analysis/assets/141806496/bf139304-0391-42ce-a3e4-5a980aa33163)
+
+
 ```MySQL
 -- Quantity sold for each branch (above average).
 SELECT Branch, SUM(Quantity) AS QTY
@@ -189,7 +193,9 @@ FROM walmart_data
 GROUP BY Branch
 HAVING SUM(Quantity) > (SELECT AVG(Quantity) FROM walmart_data);
 ```
-![image](https://github.com/Rizwans-github/Walmart-Analysis/assets/141806496/50ccdd0a-b2a2-4856-9902-e0a03f2d7d52)
+![image](https://github.com/Rizwans-github/Walmart-Analysis/assets/141806496/a9b5c4fa-1c90-430f-9195-27a3170a28ad)
+
+
 ```MySQL
 -- Count of transactions by gender and product line.
 SELECT Gender, Product_line, COUNT(Gender) AS CNT
@@ -197,7 +203,9 @@ FROM walmart_data
 GROUP BY Product_line, Gender
 ORDER BY CNT DESC;
 ```
-![image](https://github.com/Rizwans-github/Walmart-Analysis/assets/141806496/04647830-f249-4f52-969e-11b5990eb7c2)
+
+![image](https://github.com/Rizwans-github/Walmart-Analysis/assets/141806496/da021a3b-99b0-4674-a5e6-32365a7c187f)
+
 ```MySQL
 -- Average rating for each product line.
 SELECT Product_line, ROUND(AVG(Rating),  2)
@@ -205,7 +213,8 @@ FROM walmart_data
 GROUP BY Product_line
 ORDER BY AVG(Rating) DESC;
 ```
-![image](https://github.com/Rizwans-github/Walmart-Analysis/assets/141806496/6b566b9d-3d8f-43d3-87bf-52d7bf94b9d8)
+![image](https://github.com/Rizwans-github/Walmart-Analysis/assets/141806496/c4b717aa-bd58-4f20-8f02-66eba223eca0)
+
 ```MySQL
 -- Total revenue, average gross margin percentage for each product line.
 SELECT Product_line, 
@@ -215,7 +224,9 @@ FROM walmart_data
 GROUP BY Product_line
 ORDER BY Total_Revenue DESC;
 ```
-![image](https://github.com/Rizwans-github/Walmart-Analysis/assets/141806496/1c42c774-00f6-4c9b-8af3-54d0d647ba45)
+
+![image](https://github.com/Rizwans-github/Walmart-Analysis/assets/141806496/a69c0989-faa9-43de-967a-d146126d287e)
+
 ```MySQL
 -- Transaction details by branch and customer type.
 SELECT Branch, Customer_type, 

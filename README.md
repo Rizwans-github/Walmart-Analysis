@@ -115,7 +115,8 @@ FROM walmart_data;
 SELECT COUNT(DISTINCT Product_line)
 FROM walmart_data;
 ```
-![image](https://github.com/Rizwans-github/Walmart-Analysis/assets/141806496/a4e77257-c337-4c4d-864d-85904487b6ac)
+![image](https://github.com/Rizwans-github/Walmart-Analysis/assets/141806496/44efe9e6-c7e3-4dd7-9b95-e42d69d410e0)
+
 ```MySQL
 -- Analyzing the most used payment methods and their occurrences.
 SELECT payment, COUNT(Payment) AS Most_used
@@ -123,7 +124,8 @@ FROM walmart_data
 GROUP BY payment
 ORDER BY Most_used DESC;
 ```
-![image](https://github.com/Rizwans-github/Walmart-Analysis/assets/141806496/1b064f1d-a74c-4729-81ea-c99e02ca28a0)
+![image](https://github.com/Rizwans-github/Walmart-Analysis/assets/141806496/a0bef0f1-4f61-4431-86e6-e5ffef96af56)
+
 
 ```MySQL
 -- Counting occurrences of each product line.
@@ -132,7 +134,8 @@ FROM walmart_data
 GROUP BY Product_line
 ORDER BY CNT DESC;
 ```
-![image](https://github.com/Rizwans-github/Walmart-Analysis/assets/141806496/b73f1a2d-67a7-4081-945d-3573cca312c9)
+![image](https://github.com/Rizwans-github/Walmart-Analysis/assets/141806496/c367c41e-4509-4835-85ee-bc78763d781d)
+
 
 ```MySQL
 -- Total revenue for each month.

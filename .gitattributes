@@ -1,4 +1,5 @@
 *.sql linguist-detectable=true
+*.tsql linguist-detectable=false
 *.java linguist-detectable=false
 *.python linguist-detectable=false
 *.css linguist-detectable=false
